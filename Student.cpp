@@ -106,18 +106,18 @@ void Student::Edit() {
 			cout << this->course << endl
 				<< "Новое >> ";
 			cin >> course_temp;
-			course = course_temp;
-			if (this->course > 5 || this->course < 1)
+			if (course_temp > 5 || course_temp < 1)
 				throw 1;
+			course = course_temp;
 			break;
 		case 5:
 			cout << "Текущее: ";
 			cout << this->sr_ball << endl
 				<< "Новое >> ";
 			cin >> srball_temp;
-			sr_ball = srball_temp;
-			if (this->sr_ball > 5 || this->sr_ball < 2)
+			if (srball_temp > 5 || srball_temp < 2)
 				throw 2;
+			sr_ball = srball_temp;
 			break;
 		default:
 			break;

@@ -52,15 +52,13 @@ void Personal::Edit() {
 			cout << "Текущее: ";
 			cout << this->persFIO.SurName << " "
 				<< this->persFIO.Name << " "
-				<< this->persFIO.LastName << endl
-				<< "Новое:  Фамилия >> ";
+				<< this->persFIO.LastName << endl;
 			cin.ignore(256, '\n');
+			cout	<< "Новое:  Фамилия >> ";
 			getline(cin, fio_temp.SurName);
 			cout << "\tИмя >> ";
-			cin.ignore(256, '\n');
 			getline(cin, fio_temp.Name);
 			cout << "\tОтчество >> ";
-			cin.ignore(256, '\n');
 			getline(cin, fio_temp.LastName);
 			persFIO = fio_temp;
 			break;

@@ -6,7 +6,6 @@ Prepod::Prepod() {
 		cin.ignore(256, '\n');
 		cout << "Введите ФИО преподавателя:" << endl
 			<< "Фамилия: ";
-		cin.ignore(256, '\n');
 		getline(cin, this->prepFIO.SurName);
 		cout << "Имя ";
 		getline(cin, this->prepFIO.Name);
