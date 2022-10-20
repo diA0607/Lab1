@@ -3,7 +3,7 @@
 #include "Data.h"
 using namespace std;
 
-class Prepod : public VYZ {
+class Prepod : public VUZ {
 private:
 	FIO prepFIO;
 	string groups;

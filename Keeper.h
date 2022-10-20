@@ -9,7 +9,7 @@ using namespace std;
 
 class Keeper {
 private:
-	VYZ** Value;
+	VUZ** Value;
 	int size;
 public:
 	Keeper();

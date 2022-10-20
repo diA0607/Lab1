@@ -3,7 +3,7 @@
 #include "Data.h"
 using namespace std;
 
-class Student : public VYZ {
+class Student : public VUZ {
 private:
 	FIO stdFIO;
 	string group; 

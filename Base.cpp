@@ -1,21 +1,21 @@
 #include "Base.h"
 
-void VYZ::SetType(int _type) {
+void VUZ::SetType(int _type) {
 	type = _type;
 }
 
-int VYZ::GetType() {
+int VUZ::GetType() {
 	return type;
 }
 
-void VYZ::SetErr(bool _err) {
+void VUZ::SetErr(bool _err) {
 	err = _err;
 }
 
-bool VYZ::GetErr() {
+bool VUZ::GetErr() {
 	return err;
 }
 
-VYZ::~VYZ() {
+VUZ::~VUZ() {
 
 }

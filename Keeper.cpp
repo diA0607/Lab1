@@ -28,7 +28,7 @@ int Keeper::GetSize() {
 
 void Keeper::Add() {
 	try {
-		VYZ** temp = new VYZ * [size + 1];
+		VUZ** temp = new VUZ * [size + 1];
 		int i = 0;
 		while (i < size) {
 			temp[i] = Value[i];
@@ -59,7 +59,7 @@ void Keeper::Add() {
 }
 
 void Keeper::Add(int _type, ifstream& fin) {
-	VYZ** temp = new VYZ * [size + 1];
+	VUZ** temp = new VUZ * [size + 1];
 	int i = 0;
 	while (i < size) {
 		temp[i] = Value[i];
@@ -150,7 +150,7 @@ void Keeper::Del() {
 		size--;
 	}
 	else {
-		VYZ** temp = new VYZ * [size - 1];
+		VUZ** temp = new VUZ * [size - 1];
 		int j = 0;
 		for (int i = 0; i < size; i++) {
 			if (x == i)

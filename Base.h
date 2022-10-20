@@ -4,7 +4,7 @@
 #include <string>
 using namespace std;
 
-class VYZ {
+class VUZ {
 private:
 	int type;
 	bool err = false;
@@ -13,7 +13,7 @@ public:
 	int GetType();
 	void SetErr(bool _err);
 	bool GetErr();
-	virtual ~VYZ() = 0;
+	virtual ~VUZ() = 0;
 	virtual void Save(ofstream& fout) = 0;
 	virtual void Edit() = 0;
 	virtual void Print(ostream& out) = 0;

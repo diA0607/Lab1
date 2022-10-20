@@ -3,7 +3,7 @@
 #include "Data.h"
 using namespace std;
 
-class Personal : public VYZ {
+class Personal : public VUZ {
 private:
 	FIO persFIO;
 	string spec;
