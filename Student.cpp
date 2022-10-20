@@ -4,21 +4,17 @@ Student::Student() {
 	try {
 		SetType(1);
 		SetErr(false);
-		cout << "Введите ФИО студента:" << endl
-			<< "Имя: ";
 		cin.ignore(256, '\n');
-		getline(cin, this->stdFIO.Name);
+		cout << "Введите ФИО студента:" << endl;
 		cout << "Фамилия: ";
 		getline(cin, this->stdFIO.SurName);
+		cout << "Имя: ";
+		getline(cin, this->stdFIO.Name);
 		cout << "Отчество: ";
 		getline(cin, this->stdFIO.LastName);
 		cout << "Группа: ";
-		//cin >> this->group;
 		getline(cin, this->group);
-		//if (isalpha(this->group))
-		//	throw 1;
 		cout << "Специальность: ";
-		//cin.ignore(256, '\n');
 		getline(cin, this->spec);
 		cout << "Текущий курс: ";
 		cin >> this->course;
@@ -45,8 +41,8 @@ Student::Student() {
 Student::Student(ifstream& fin) {
 	SetType(1);
 	fin.ignore(256, '\n');
-	getline(fin, this->stdFIO.Name);
 	getline(fin, this->stdFIO.SurName);
+	getline(fin, this->stdFIO.Name);
 	getline(fin, this->stdFIO.LastName);
 	getline(fin, this->group);
 	getline(fin, this->spec);
@@ -79,14 +75,12 @@ void Student::Edit() {
 		switch (choose) {
 		case 1:
 			cout << "Текущее: ";
-			cout << this->stdFIO.Name << " "
-				<< this->stdFIO.SurName << " "
-				<< this->stdFIO.LastName << endl
-				<< "Новое:  Имя >> ";
+			cout << this->stdFIO.SurName << " " << this->stdFIO.Name << " " << this->stdFIO.LastName << endl;
+			cout	<< "Новое:  Фамилия >> ";
 			cin.ignore(256, '\n');
-			getline(cin, fio_temp.Name);
-			cout << "\tФамилия >> ";
 			getline(cin, fio_temp.SurName);
+			cout << "\tИмя >> ";
+			getline(cin, fio_temp.Name);
 			cout << "\tОтчество >> ";
 			getline(cin, fio_temp.LastName);
 			stdFIO = fio_temp;
@@ -145,8 +139,8 @@ void Student::Edit() {
 
 void Student::Save(ofstream& fout) {
 	fout << GetType() << endl
-		<< this->stdFIO.Name << endl
 		<< this->stdFIO.SurName << endl
+		<< this->stdFIO.Name << endl
 		<< this->stdFIO.LastName << endl
 		<< this->group << endl
 		<< this->spec << endl
@@ -156,7 +150,7 @@ void Student::Save(ofstream& fout) {
 
 void Student::Print(ostream& out) {
 	out << "Студент:" << endl
-		<< "ФИО:" << this->stdFIO.Name << " " << this->stdFIO.SurName << " " << this->stdFIO.LastName << endl
+		<< "ФИО:" << this->stdFIO.SurName << " " << this->stdFIO.Name << " " << this->stdFIO.LastName << endl
 		<< "Группа:" << this->group << endl
 		<< "Специальность:" << this->spec << endl
 		<< "Номер курса:" << this->course << endl

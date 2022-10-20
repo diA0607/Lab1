@@ -5,11 +5,11 @@ Personal::Personal() {
 		SetErr(false);
 		cin.ignore(256, '\n');
 		cout << "Введите ФИО:" << endl
-			<< "Имя: ";
-		getline(cin, this->persFIO.Name);
-		cout << "Фамилия: ";
+			<< "Фамилия: ";
 		getline(cin, this->persFIO.SurName);
-		cout << "Отчесво: ";
+		cout << "Имя: ";
+		getline(cin, this->persFIO.Name);
+		cout << "Отчество: ";
 		getline(cin, this->persFIO.LastName);
 		cout << "Должность: ";
 		getline(cin, this->spec);
@@ -23,8 +23,8 @@ Personal::Personal() {
 Personal::Personal(ifstream& fin) {
 	SetType(3);
 	fin.ignore(256, '\n');
-	getline(fin, this->persFIO.Name);
 	getline(fin, this->persFIO.SurName);
+	getline(fin, this->persFIO.Name);
 	getline(fin, this->persFIO.LastName);
 	getline(fin, this->spec);
 	getline(fin, this->tel);
@@ -50,15 +50,15 @@ void Personal::Edit() {
 		switch (choose) {
 		case 1:
 			cout << "Текущее: ";
-			cout << this->persFIO.Name << " "
-				<< this->persFIO.SurName << " "
+			cout << this->persFIO.SurName << " "
+				<< this->persFIO.Name << " "
 				<< this->persFIO.LastName << endl
-				<< "Новое:  Имя >> ";
-			cin.ignore(256, '\n');
-			getline(cin, fio_temp.Name);
-			cout << "\tФамилия >> ";
+				<< "Новое:  Фамилия >> ";
 			cin.ignore(256, '\n');
 			getline(cin, fio_temp.SurName);
+			cout << "\tИмя >> ";
+			cin.ignore(256, '\n');
+			getline(cin, fio_temp.Name);
 			cout << "\tОтчество >> ";
 			cin.ignore(256, '\n');
 			getline(cin, fio_temp.LastName);
@@ -95,8 +95,8 @@ void Personal::Edit() {
 
 void Personal::Save(ofstream& fout) {
 	fout << GetType() << endl
-		<< this->persFIO.Name << endl
 		<< this->persFIO.SurName << endl
+		<< this->persFIO.Name << endl
 		<< this->persFIO.LastName << endl
 		<< this->spec << endl
 		<< this->tel << endl
@@ -105,7 +105,7 @@ void Personal::Save(ofstream& fout) {
 
 void Personal::Print(ostream& out) {
 	out << "Персонал:" << endl
-		<< "ФИО:" << this->persFIO.Name << " " << this->persFIO.SurName << " " << this->persFIO.LastName << endl
+		<< "ФИО:" << this->persFIO.SurName << " " << this->persFIO.Name << " " << this->persFIO.LastName << endl
 		<< "Специальность:" << this->spec << endl
 		<< "Телефон:" << this->tel << endl
 		<< "Область ответственности:" << this->obl << endl

@@ -3,12 +3,13 @@
 Prepod::Prepod() {
 		SetType(2);
 		SetErr(false);
-		cout << "Введите ФИО преподавателя:" << endl
-			<< "Имя: ";
 		cin.ignore(256, '\n');
-		getline(cin, this->prepFIO.Name);
-		cout << "Фамилия: ";
+		cout << "Введите ФИО преподавателя:" << endl
+			<< "Фамилия: ";
+		cin.ignore(256, '\n');
 		getline(cin, this->prepFIO.SurName);
+		cout << "Имя ";
+		getline(cin, this->prepFIO.Name);
 		cout << "Отчество: ";
 		getline(cin, this->prepFIO.LastName);
 		cout << "Введите группы: ";
@@ -47,14 +48,14 @@ void Prepod::Edit() {
 		switch (choose) {
 		case 1:
 			cout << "Текущее: ";
-			cout << this->prepFIO.Name << " "
-				<< this->prepFIO.SurName << " "
+			cout << this->prepFIO.SurName << " "
+				<< this->prepFIO.Name << " "
 				<< this->prepFIO.LastName << endl
-				<< "Новое:  Имя >> ";
+				<< "Новое:  Фамилия >> ";
 			cin.ignore(256, '\n');
-			getline(cin, fio_temp.Name);
-			cout << "\tФамилия >> ";
 			getline(cin, fio_temp.SurName);
+			cout << "\tИмя >> ";
+			getline(cin, fio_temp.Name);
 			cout << "\tОтчество >> ";
 			getline(cin, fio_temp.LastName);
 			prepFIO = fio_temp;
@@ -90,7 +91,7 @@ void Prepod::Save(ofstream& fout) {
 
 void Prepod::Print(ostream& out) {
 	out << "Преподаватель:" << endl
-		<< "ФИО:" << this->prepFIO.Name << " " << this->prepFIO.SurName << " " << this->prepFIO.LastName << endl
+		<< "ФИО:" << this->prepFIO.SurName << " " << this->prepFIO.Name << " " << this->prepFIO.LastName << endl
 		<< "Группы:" << this->groups << endl
 		<< "Дисциплина:" << this->disc << endl
 		<< "=================================" << endl;
