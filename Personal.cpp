@@ -40,6 +40,7 @@ void Personal::Edit() {
 	FIO fio_temp;
 	string s_temp;
 	string i_temp;
+	string t_temp;
 	cout << "Выберите редактируемый параметр:" << endl
 		<< "1. ФИО" << endl
 		<< "2. Специальность" << endl
@@ -83,8 +84,8 @@ void Personal::Edit() {
 			cout << this->obl << endl
 				<< "Новое >> ";
 			cin.ignore(256, '\n');
-			getline(cin, s_temp);
-			obl = s_temp;
+			getline(cin, t_temp);
+			obl = t_temp;
 			break;
 		default:
 			break;
@@ -99,6 +100,7 @@ void Personal::Save(ofstream& fout) {
 		<< this->spec << endl
 		<< this->tel << endl
 		<< this->obl << endl;
+
 }
 
 void Personal::Print(ostream& out) {

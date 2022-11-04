@@ -36,8 +36,8 @@ void Prepod::Edit() {
 	SetErr(false);
 	int choose;
 	FIO fio_temp;
-	string i_temp;
-	string s_temp;
+	string i_tmp;
+	string s_tmp;
 	cout << "Выберите редактируемый параметр:" << endl
 		<< "[1] ФИО." << endl
 		<< "[2] Группы." << endl
@@ -63,16 +63,17 @@ void Prepod::Edit() {
 			cout << "Текущее: ";
 			cout << this->groups << endl
 				<< "Новое >> ";
-			getline(cin, this->groups);
-			groups = i_temp;
+			cin.ignore(256, '\n');
+			getline(cin, i_tmp);
+			groups = i_tmp;
 			break;
 		case 3:
 			cout << "Текущее: ";
 			cout << this->disc << endl
 				<< "Новое >> ";
 			cin.ignore(256, '\n');
-			getline(cin, s_temp);
-			disc = s_temp;
+			getline(cin, s_tmp);
+			disc = s_tmp;
 			break;
 		default:
 			break;
