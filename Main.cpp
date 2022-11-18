@@ -10,14 +10,14 @@ int main() {
 	setlocale(LC_ALL, "Rus");
 	Keeper Contain;
 	char menu = 0;
-	cout << "Добро пожаловать!" << endl;
+	cout << "Лабораторная работа №1. Вариант №1!" << endl;
 	do {
 		try {
 			cout << "Текущее количество элементов в контейнере: " << Contain.GetSize() << "." << endl
 				<< "Выберите действие" << endl
 				<< "1. Добавить элемент" << endl
 				<< "2. Редактировать элемент" << endl
-				<< "3. Удалить элемент." << endl
+				<< "3. Удалить элемент" << endl
 				<< "4. Сохранить данные в файл" << endl
 				<< "5. Загрузить данные из файла" << endl
 				<< "6. Вывести данные из контейнера" << endl
@@ -34,9 +34,11 @@ int main() {
 				Contain.Add();
 				break;
 			case '2':
+				cout << Contain;
 				Contain.Edit();
 				break;
 			case '3':
+				cout << Contain;
 				Contain.Del();
 				break;
 			case '4':

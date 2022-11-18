@@ -10,7 +10,7 @@ int Choose() {
 	cin >> x;
 	return x;
 }
-
+Keeper Contain2;
 int count = 0;
 
 Keeper::Keeper() {
@@ -103,6 +103,7 @@ void Keeper::Edit() {
 					break;
 				case 3:
 					cout << ". Персонал" << endl;
+					
 					break;
 				default:
 					break;
@@ -187,6 +188,7 @@ void Keeper::Save() {
 	}
 	fout.close();
 	cout << "Сохранено!" << endl;
+	
 }
 
 void Keeper::Load() {
@@ -210,14 +212,16 @@ void Keeper::Load() {
 	if ((::count >= 1))
 		cout << "Успешно загружен ["<<::count<< "] объект." << endl;
 }
-
 ostream& operator<< (ostream& out, Keeper& obj) {
 	if (!obj.size) {
 		cout << "Контейнер пуст!" << endl;
 		return out;
 	}
 	for (int i = 0; i < obj.size; i++) {
+		cout << i + 1<<". ";
 		obj.Value[i]->Print(out);
 	}
 	return out;
 }
+
+

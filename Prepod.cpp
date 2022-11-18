@@ -7,7 +7,7 @@ Prepod::Prepod() {
 		cout << "Введите ФИО преподавателя:" << endl
 			<< "Фамилия: ";
 		getline(cin, this->prepFIO.SurName);
-		cout << "Имя ";
+		cout << "Имя: ";
 		getline(cin, this->prepFIO.Name);
 		cout << "Отчество: ";
 		getline(cin, this->prepFIO.LastName);
@@ -39,10 +39,10 @@ void Prepod::Edit() {
 	string i_tmp;
 	string s_tmp;
 	cout << "Выберите редактируемый параметр:" << endl
-		<< "[1] ФИО." << endl
-		<< "[2] Группы." << endl
-		<< "[3] Дисциплины." << endl
-		<< "[0] Отмена." << endl;
+		<< "1. ФИО" << endl
+		<< "2. Группы" << endl
+		<< "3. Дисциплины" << endl
+		<< "0. Отмена" << endl;
 	cin >> choose;
 		switch (choose) {
 		case 1:
@@ -82,8 +82,8 @@ void Prepod::Edit() {
 
 void Prepod::Save(ofstream& fout) {
 	fout << GetType() << endl
-		<< this->prepFIO.Name << endl
 		<< this->prepFIO.SurName << endl
+		<< this->prepFIO.Name << endl
 		<< this->prepFIO.LastName << endl
 		<< this->groups << endl
 		<< this->disc << endl;
